@@ -1,8 +1,8 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Madi Estis*/
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS"
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
@@ -63,11 +63,49 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+body{
+    min-width: 400px;
+    width: 400px;
+    font-family: var(--font);
+    background-color: var(--white);
+}
+h1{
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 2em;
+}
+h2{
+    font-size: 2em;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+header{
+    background-color: var(--black);
+    width: 100%;
 
+}
+.about-innovation{
+    background-color: var(--charcoal);
+    color: var(--white);
+}
+.offer-inner-container{
+    background-color: var(--blue);
+    color: var(--white);
+}
+.proven-container{
+    background-color: var(--blue);
+    color: var(--white);
+}
+footer{
+    background-color: var(--black);
+    color: var(--white);
+}
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container {
+.offer-inner-container{
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
