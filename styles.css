@@ -64,55 +64,164 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-body{
+body {
     min-width: 400px;
-    width: 400px;
     font-family: var(--font);
     background-color: var(--white);
 }
-h1{
+h1 {
     color: var(--blue);
     font-weight: bold;
     font-size: 2em;
+    padding-left: 10px;
 }
-h2{
-    font-size: 2em;
+h2 {
+    font-size: 1.9em;
     font-weight: bold;
+    margin: 15px auto;
+    width: 95%;
 }
-h3{
+h3 {
     font-size: 1.5em;
     font-weight: bold;
+    margin: 0 auto;
+    width: 95%;
+    padding: 10px 0;
 }
-header{
+p {
+    margin: 1.5rem auto;
+    padding: 2rem auto;
+    line-height: 1.5rem;
+    font-size: 1.05rem;
+}
+header {
     background-color: var(--black);
     width: 100%;
-
 }
-.about-innovation{
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    background-color: var(--black);
+}
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+nav li a {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+}
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+nav label {
+    display: inline-block;
+    padding: 2rem;
+    user-select: none;
+}
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+    left: 150px;
+}
+label span:before, label span:after {
+    background-color: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+header input {
+    display: none;
+}
+header input:checked ~ ul {
+    max-height: 500px;
+    max-width: 100%;
+}
+.about-innovation {
     background-color: var(--charcoal);
     color: var(--white);
 }
-.offer-inner-container{
+.about-innovation a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    background-color: var(--blue);
+    padding: 15px;
+    border-radius: 10px;
+}
+.offer-inner-container {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+.proven-container {
     background-color: var(--blue);
     color: var(--white);
 }
-.proven-container{
-    background-color: var(--blue);
-    color: var(--white);
+#grid-container {
+    background-color: var(--black);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
 }
-footer{
+form input, form label, textarea{
+    display: block;
+    width: 100%;
+}
+form label {
+    margin: 10px auto;
+}
+form input{
+    padding: 20px 0;
+}
+textarea {
+    padding: 30px 0;
+}
+#contact, footer {
     background-color: var(--black);
     color: var(--white);
 }
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.offer-inner-container{
+.container, .proven-inner-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+.about-innovation {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -123,7 +232,7 @@ footer{
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+header img {
     content: "";
 
     left:-.5rem;
