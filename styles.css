@@ -244,7 +244,7 @@ form {
     justify-content: center;
     padding: 10px;
 }
-form input, form label, textarea{
+form input, form label, textarea {
     display: block;
     width: 100%;
 }
@@ -368,13 +368,13 @@ header img {
 }
 
 /* MEDIA QUERIES (MEDIUM) */ 
-@media (min-width: 800px){
-    nav ul{
+@media (min-width: 800px) {
+    nav ul {
         overflow: visible;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    nav li a{
+    nav li a {
         display: inline-block;
     }
     .offer-container {
@@ -382,17 +382,17 @@ header img {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-    .results-container{
+    .results-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 /* MEDIA QUERIES (LARGE) */
 @media (min-width: 1024px) {
-    .offer-container{
+    .offer-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    form{
+    form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
