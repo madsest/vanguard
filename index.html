@@ -17,7 +17,7 @@
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
     <header>
         <div class="container">
-            <img src="images/vanguard-logo.svg" alt="Vanguard logo">
+            <img src="images/vanguard-logo.svg" alt="Vanguard logo" style="width: 10vw;">
             <h1>Vanguard</h1>
                 <nav>
                     <h2>Main Navigation</h2>
@@ -80,44 +80,47 @@
             </div>
         </section>
 
-        <section>
-            <div class="proven-container">
-                <div class="proven-inner-container">
-                    <h2>Proven Results</h2>
-                        <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
-                </div>
-                <div class="proven-inner-container">
-                    <h3>Profits</h3>
-                        <div id="grid-container">
-                                <div>Year</div>
-                                <div>Revenue ($M)</div>
-                                <div>Growth (%)</div>
-                                <div>2020</div>
-                                <div>$120M</div>
-                                <div>30%</div>
-                                <div>2021</div>
-                                <div>$180M</div>
-                                <div>50%</div>
-                                <div>2022</div>
-                                <div>$250M</div>
-                                <div>70%</div>
-                                <div>2023</div>
-                                <div>$340M</div>
-                                <div>85%</div>
-                                <div>2024</div>
-                                <div>$420M</div>
-                                <div>100%</div>
+        <section id="results">
+            <div class="container">
+                
+                <h2>Proven Results</h2>
+                    <p>Our data-driven strategies have delivered outstanding ROI, leading to significant revenue growth.</p>
+                <div class="results-container">
+                    <div class="results-inner-container">
+                        <h3>Profits</h3>
+                            <div id="results-table">
+                                    <div>Year</div>
+                                    <div>Revenue ($M)</div>
+                                    <div>Growth (%)</div>
+                                    <div>2020</div>
+                                    <div>$120M</div>
+                                    <div>30%</div>
+                                    <div class="charcoal">2021</div>
+                                    <div class="charcoal">$180M</div>
+                                    <div class="charcoal">50%</div>
+                                    <div>2022</div>
+                                    <div>$250M</div>
+                                    <div>70%</div>
+                                    <div class="charcoal">2023</div>
+                                    <div class="charcoal">$340M</div>
+                                    <div class="charcoal">85%</div>
+                                    <div>2024</div>
+                                    <div>$420M</div>
+                                    <div>100%</div>
+                            </div>
+                    </div>
+                    
+                    
+                    <div class="results-inner-container">
+                        <h3>Growth</h3>
+    <!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
+                        <div  id="bar-chart">
+                            <div class="bar" data-year="2020" style="--height: 30%;"></div>
+                            <div class="bar" data-year="2021" style="--height: 50%;"></div>
+                            <div class="bar" data-year="2022" style="--height: 70%;"></div>
+                            <div class="bar" data-year="2023" style="--height: 85%;"></div>
+                            <div class="bar" data-year="2024" style="--height: 100%;"></div>
                         </div>
-                </div>
-                <div class="proven-inner-container">
-                <h3>Growth</h3>
-<!-- CODE PROVIDED FOR YOU, NOTHING TO DO FOR THE BAR CHART IN THE HTML-->
-                    <div  id="bar-chart">
-                        <div class="bar" data-year="2020" style="--height: 30%;"></div>
-                        <div class="bar" data-year="2021" style="--height: 50%;"></div>
-                        <div class="bar" data-year="2022" style="--height: 70%;"></div>
-                        <div class="bar" data-year="2023" style="--height: 85%;"></div>
-                        <div class="bar" data-year="2024" style="--height: 100%;"></div>
                     </div>
                 </div>
             </div>
@@ -129,23 +132,29 @@
                 <h2>Contact Us</h2>
                 <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
                 <form action="https://wp.zybooks.com/form-viewer.php" method="POST">
-                    
-                    <label for="my-name">Full Name</label>
-                    <input type="text" name="my-name" id="my-name">
-                    
-                    <label for="my-email">Email Address</label>
-                    <input type="email" name="my-email" id="my-email">
-                    
-                    <label for="company">Company Name</label>
-                    <input type="text" name="company" id="company">
-                    
-                    <label for="industry">Industry</label>
-                    <input type="text" name="industry" id="industry">
-                    
-                    <label for="comments">How can we help you?</label>
-                    <textarea name="comments" id="comments"></textarea>
-
-                    <input type="submit" name="my-submit" id="my-submit" value="Submit">
+                    <div> 
+                        <label for="my-name">Full Name</label>
+                        <input type="text" name="my-name" id="my-name">
+                    </div>  
+                    <div>    
+                        <label for="my-email">Email Address</label>
+                        <input type="email" name="my-email" id="my-email">
+                    </div>
+                    <div>    
+                        <label for="company">Company Name</label>
+                        <input type="text" name="company" id="company">
+                    </div>
+                    <div>    
+                        <label for="industry">Industry</label>
+                        <input type="text" name="industry" id="industry">
+                    </div>
+                    <div>   
+                        <label for="comments">How can we help you?</label>
+                        <textarea name="comments" id="comments"></textarea>
+                    </div> 
+                    <div>
+                        <input type="submit" name="my-submit" id="my-submit" value="Submit">
+                    </div>
                 </form>
             </div>
         </section>

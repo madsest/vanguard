@@ -73,13 +73,14 @@ h1 {
     color: var(--blue);
     font-weight: bold;
     font-size: 2em;
-    padding-left: 10px;
+    position: relative;
+    left: 3rem;
 }
 h2 {
     font-size: 1.9em;
     font-weight: bold;
-    margin: 15px auto;
     width: 95%;
+    padding: 20px;
 }
 h3 {
     font-size: 1.5em;
@@ -89,8 +90,6 @@ h3 {
     padding: 10px 0;
 }
 p {
-    margin: 1.5rem auto;
-    padding: 2rem auto;
     line-height: 1.5rem;
     font-size: 1.05rem;
 }
@@ -100,7 +99,7 @@ header {
 }
 header div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 nav {
@@ -171,6 +170,20 @@ header input:checked ~ ul {
 .about-innovation {
     background-color: var(--charcoal);
     color: var(--white);
+    box-shadow: inset 0 5px 5px var(--blue);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.about-innovation h2 {
+    backdrop-filter: blur(5px);
+}
+.about-innovation p {
+    padding: 20px 0;
+    backdrop-filter: blur(5px);
+}
+.about-innovation p ~ div {
+    transition: 1s;
+    backdrop-filter: blur(5px);
 }
 .about-innovation a {
     text-decoration: none;
@@ -179,27 +192,64 @@ header input:checked ~ ul {
     background-color: var(--blue);
     padding: 15px;
     border-radius: 10px;
+    transition: .5s ease-in;
+    backdrop-filter: blur(5px);
 }
+.about-innovation a:hover {
+    background-color: var(--red);
+}
+.about-innovation p ~ div:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .offer-inner-container {
     background-color: var(--blue);
     color: var(--white);
     padding: 10px;
     border-radius: 10px;
     margin: 15px auto;
+    transition: 1s;
 }
-.proven-container {
+.offer-inner-container:hover {
+    transform: translate(0, -10px);
+}
+#results {
     background-color: var(--blue);
     color: var(--white);
 }
-#grid-container {
+.results-container {
+    background-color: var(--blue);
+    
+}
+#results-table {
     background-color: var(--black);
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+}
+#results-table > div {
+    padding: 15px 0;
+    text-align: center;
+    border: 1px solid var(--charcoal);
+}
+.charcoal {
+    background-color: var(--charcoal);
+}
+#contact {
+    padding: 30px ;
+}
+form {
+    width: 95%;
+    justify-content: center;
+    padding: 10px;
 }
 form input, form label, textarea{
     display: block;
     width: 100%;
+}
+form input, textarea {
+    border: 3px inset var(--blue);
 }
 form label {
     margin: 10px auto;
@@ -210,12 +260,33 @@ form input{
 textarea {
     padding: 30px 0;
 }
+input[type="submit"] {
+    background-color: var(--blue);
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: 1s;
+}
 #contact, footer {
     background-color: var(--black);
     color: var(--white);
 }
+footer {
+    text-align: center;
+    padding: 40px 0;
+}
+footer a {
+    color: var(--blue);
+}
+input[type="submit"]:hover {
+    transform: scale(1.1, 1.1);
+    background-color: var(--red);
+}
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container, .proven-inner-container {
+.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -234,12 +305,20 @@ textarea {
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 header img {
     content: "";
-
-    left:-.5rem;
+    animation-name: logoMovement;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    left:1rem;
+    top: 20px;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+}
+@keyframes logoMovement {
+    0% {top: 0;}
+    50% {top: 30px;}
+    100% {top: 0;}
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -251,7 +330,7 @@ header img {
     height: 300px;
     width: 100%;
     max-width: 800px;
-    padding: 1rem;
+    padding: 1.75rem;
     position: relative;
 }
 /* ADD ON TRANSITION ON HEIGHT */
@@ -260,7 +339,7 @@ header img {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: 1s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -274,6 +353,11 @@ header img {
     font-weight: bold;
     color: var(--white);
 }
+
+/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
+.bar {
+    animation: stepUp 1s ease-in-out forwards;
+}
 @keyframes stepUp {
     0% {
         height: 0;
@@ -282,27 +366,35 @@ header img {
         height: var(--height);
     }
 }
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
-}
-
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
-    #results {
+@media (min-width: 800px){
+    nav ul{
+        overflow: visible;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav li a{
+        display: inline-block;
+    }
+    .offer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .results-container{
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
-
-
+}
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px) {
+    .offer-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
